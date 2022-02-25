@@ -47,13 +47,7 @@ void loop() {
       Serial.print(z);
       Serial.println(" - Microscope is away");
       key.key_code(KEY_SCROLL_LOCK);
-    } else if(x > 25 && z < 35) {
-      Serial.print(x);
-      Serial.print("\t");
-      Serial.print(z);
-      Serial.println(" - Microscope is out");
-      key.key_code(KEY_INSERT);
-    } else if(x < 20 && z < 32 && z > 29) {
+    } else if(x > 25 && z < 35 || x < 20 && z < 32 && z > 29) {
       Serial.print(x);
       Serial.print("\t");
       Serial.print(z);
