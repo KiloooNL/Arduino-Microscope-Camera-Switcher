@@ -39,15 +39,15 @@ void loop() {
   if (IMU.magneticFieldAvailable()) {
     IMU.readMagneticField(x, y, z);
 
-    // Print the XYZ cords
+    // Print the XZ cords
     delay(1000);
-    if(x < 25 && z > 35) {
+    if(x < 46.6 && z < -10.4) {
       Serial.print(x);
       Serial.print("\t");
       Serial.print(z);
       Serial.println(" - Microscope is away");
       key.key_code(KEY_SCROLL_LOCK);
-    } else if(x > 25 && z < 35 || x < 20 && z < 32 && z > 29) {
+    } else if(x > 47 && z < -12.5) {
       Serial.print(x);
       Serial.print("\t");
       Serial.print(z);
