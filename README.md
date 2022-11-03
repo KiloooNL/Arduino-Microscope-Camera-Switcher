@@ -1,17 +1,18 @@
 
-# Arduino GPS Tracker
+# Arduino Microscope Camera Switcher
 
-This script will get the location, date and time and print it to a csv file on the sd card.
-It will update every 10 seconds. If the location has not changed, it will check every 10 seconds for a change, and if none is found, wait until mobile again.
+This Arduino script reads the magnetic field values from the LSM9DS1 sensor and then performs a keypress based on the X and Z co-ordinates.
 
-Using the following hardware:
-- Arduino Nano BLE 33: https://core-electronics.com.au/arduino-nano-33-ble.html
-- U-blox NEO-6M GPS Module: https://core-electronics.com.au/u-blox-neo-6m-gps-module.html 
-- SD Card reader: https://core-electronics.com.au/sd-card-module.html
+The project is based off of Paul Daniel's Compass Switch project: https://github.com/inflex/compass-switch
 
-Using the following libraries:
-- TinyGPS+
-- Time
-- SPI
-- SdFat for exFAT support
+Instead of using the HMC5833L IC, I opted to use an Arduino Nano.
+This project is intended to have the Arduino on the microscope, and when the microscope is moved to a certain position a keypress will result. Essentially creating an automatic vision switcher with OBS or similar when the microscope is in-view.
 
+
+  The hardware:
+  - Arduino Nano 33 BLE: https://core-electronics.com.au/arduino-nano-33-ble.html
+
+  Libraries used: 
+  - Arduino LSM9DS1: https://www.arduino.cc/reference/en/libraries/arduino_lsm9ds1/
+  - Pluggable USB HID: https://www.arduino.cc/reference/en/libraries/usbhid/
+  - USB Keyboard: https://github.com/julianschuler/USBKeyboard
